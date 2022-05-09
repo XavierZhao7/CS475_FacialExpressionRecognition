@@ -34,7 +34,9 @@ Please refer to graphs in output/curves.ipynb for our model results.
 
 Please see sample below for our sample video results.
 > video output
+
 ![](pic/video_output.gif)
 
 > camera output
+
 ![](pic/camera_output.gif)
