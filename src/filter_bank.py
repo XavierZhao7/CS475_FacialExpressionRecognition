@@ -1,3 +1,8 @@
+"""
+author: Xihan Zhao, Louise Lu
+datetime: 5/2022
+desc: read dataset
+"""
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers

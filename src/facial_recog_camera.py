@@ -1,3 +1,9 @@
+"""
+author: Xihan Zhao, Louise Lu
+datetime: 5/2022
+desc: read dataset
+"""
+
 import cv2
 import numpy as np
 import sys
