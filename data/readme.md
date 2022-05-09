@@ -1,4 +1,4 @@
-# How to use these unzipepd file
+# How to use these unzipped file
 
 If you want to run the model / application on your local folder, you can unzip these files individually.
 
