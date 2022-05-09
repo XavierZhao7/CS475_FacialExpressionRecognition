@@ -21,6 +21,7 @@ If you find an error message that a certain package is not found, you will need 
 > python src/train.py --dataset <#name of dataset> --model <#name of model> --epoches <#number of epochs> --batch-size <#batch size>
 
 Note that the <#name of dataset> is either combined, raf, or ck+.
+
 Note also that <#name of model> is either SimpleCNN3, GaborCNN3,or VGG16.
 
 
