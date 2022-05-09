@@ -91,3 +91,33 @@ def CNN3(input_shape=(48, 48, 1), n_classes=7):
 
     model = Model(inputs=input_layer, outputs=x)
     return model
+
+
+def VGG16(input_shape=(48, 48, 1), n_classes=7):
+    input_layer = Input(shape=input_shape)
+    
+    x = Conv2D(64,(3,3),padding="same", activation="relu")(input_layer)
+    x = Conv2D(64, (3,3),padding="same", activation="relu")(x)
+    x = MaxPooling2D(pool_size=(2,2),strides=2)(x)
+    x = Conv2D(128, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(128, (3,3), padding="same", activation="relu")(x)
+    x = MaxPooling2D(pool_size=(2,2),strides=2)(x)
+    x = Conv2D(256, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(256, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(256, (3,3), padding="same", activation="relu")(x)
+    x = MaxPooling2D(pool_size=(2,2),strides=2)(x)
+    x = Conv2D(512, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(512, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(512, (3,3), padding="same", activation="relu")(x)
+    x = MaxPooling2D(pool_size=(2,2),strides=2)(x)
+    x = Conv2D(512, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(512, (3,3), padding="same", activation="relu")(x)
+    x = Conv2D(512, (3,3), padding="same", activation="relu")(x)
+    x = MaxPooling2D(pool_size=(2,2),strides=2)(x)
+    x = Flatten()(x)
+    x = Dense(4096, activation='relu')(x)
+    x = Dense(4096, activation='relu')(x)
+    x = Dense(n_classes, activation='softmax')(x)
+
+    model = Model(inputs=input_layer, outputs=x)
+    return model
