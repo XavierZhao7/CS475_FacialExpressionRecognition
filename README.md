@@ -5,7 +5,7 @@ This project uses tensorflow.
 For Apple M1 and newest chip carried MacBook Pro, refer to env_apple_M1.sh
 
 If you find an error message that a certain package is not found, you will need to install the package and contact either one of us at:
-<xzhao77@jhu.edu>,<ylu106@jhu.edu>,<zsha2@jhu.edu>,<pxu11@jhu.edu>, if you still have troubles.
+<xzhao77@jhu.edu>, <ylu106@jhu.edu>, <zsha2@jhu.edu>, <pxu11@jhu.edu>, if you still have troubles.
 
 ## Here are the instructions to run the facial expression recognition application in src.
 > python src/facial_recog_camera.py -i <input video directory/ 0 for camera> -o <output file directory (preferred .avi format)>
@@ -30,6 +30,20 @@ Since we cannot copy, publish or distribute any portion of the [RAF database](ht
 
 
 ## Results
-Please refer to graphs in output/curves.ipynb for our model results.
+### Please see graphs below and output/curves.ipynb for our model results.
+> ck+
 
-Please see sample below for our sample video results.
+![](pic/ckplus.png)
+
+> combined
+
+![](pic/combined.png)
+
+### Please see below for our sample video results.
+> video output
+
+![](pic/video_output.gif)
+
+> camera output
+
+![](pic/camera_output.gif)
