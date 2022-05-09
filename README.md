@@ -30,4 +30,6 @@ Since we cannot copy, publish or distribute any portion of the [RAF database](ht
 
 
 ## Results
-Please refer to graphs in output/curves.ipynb for sample output in our testing process.
+Please refer to graphs in output/curves.ipynb for our model results.
+
+Please see sample below for our sample video results.
