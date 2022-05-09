@@ -6,7 +6,7 @@ import os
 import argparse
 # from model_predict import BestModel
 # from model1_pred import BestModel
-from prediction import GaborCNN3, generate_faces
+from models import VGG16, GaborCNN3, generate_faces
 
 import tensorflow as tf
 from tensorflow.keras.utils import to_categorical
@@ -50,7 +50,7 @@ def program(input, output):
                     faces = generate_faces(cropped_img)
 
                     # TO DO
-                    weight_path = 'output/ck_gabor_method1_cnn_weight.h5'
+                    weight_path = 'output/ck_gaborcnn_weight.h5'
                     
                     model = GaborCNN3()
 
@@ -61,7 +61,8 @@ def program(input, output):
                     result_sum = np.sum(results, axis=0).reshape(-1)
                     label_idx = np.argmax(result_sum, axis=0)
                     #label_dict = {0:'Surprised', 1: 'Fearful', 2: 'Disgusted', 3: 'Happy', 4: 'Sad', 5: 'Angry', 6: 'Neutral' }
-                    label_dict = {0:'Anger', 1: 'Disgust', 2: 'Fear', 3: 'Happy', 4: 'Sad', 5: 'Surprised', 6: 'Neutral' }
+                    #label_dict = {0:'Anger', 1: 'Disgust', 2: 'Fear', 3: 'Happy', 4: 'Sad', 5: 'Surprised', 6: 'Neutral' }
+                    label_dict = {0:'Anger', 1: 'Disgust', 2: 'Fear', 3: 'Happy', 4: 'Neutral',5: 'Sad', 6: 'Surprised' }
                     # 'anger', 'disgust', 'fear', 'happy', 'sad', 'surprised', 'contempt'
                     font = cv2.FONT_HERSHEY_TRIPLEX
                     #text = obj.emotion

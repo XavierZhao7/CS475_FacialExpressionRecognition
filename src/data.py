@@ -1,5 +1,5 @@
 """
-author: Xihan Zhao
+author: Xihan Zhao, Louise Lu
 datetime: 5/2022
 desc: read dataset
 """
@@ -38,13 +38,6 @@ class CK(object):
         return expressions, x_train, y_train
 
 
-    def gen_data(self):
-        _, x, y = self.gen_train()
-        from sklearn.model_selection import train_test_split
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=2022)
-        x_train, x_valid, y_train, y_valid = train_test_split(x_train, y_train, test_size=0.3, random_state=2022)
-
-        return x_train, x_valid, x_test, y_train, y_valid, y_test
 
 
 class RAF(object):
@@ -57,6 +50,7 @@ class RAF(object):
         images = os.listdir(folder)
         x_train = []
         y= np.load(label_folder)
+        y_train = y
         y_train = y-1
         for i in range(len(images)):
                 img = load_img(os.path.join(folder, images[i]), target_size=(48, 48), color_mode="grayscale")
@@ -65,22 +59,23 @@ class RAF(object):
         x_train = np.array(x_train).astype('float32') / 255.
         y_train = np.array(y_train).astype('int')
         return x_train, y_train
-    def gen_data(self):
-        x, y = self.gen_train()
-        from sklearn.model_selection import train_test_split
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=2022)
-        x_train, x_valid, y_train, y_valid = train_test_split(x_train, y_train, test_size=0.3, random_state=2022)
+   
 
-        return x_train, x_valid, x_test, y_train, y_valid, y_test
+    
 
-class Jaffe(object):
+
+
+
+class Combined(object):
     def __init__(self):
-        self.folder = './data/jaffe'
+        self.folder = './data/combined'
 
     def gen_train(self):
-        folder = os.path.join(self.folder, 'Training')
-        # Jaffe datast images are restored under different folders thus needs a list called expressions
-        expressions = ['anger', 'disgust', 'fear', 'happy',  'neutral','sad', 'surprised']
+
+        folder = self.folder
+
+        # CK datast images are restored under different folders thus needs a list called expressions
+        expressions = ['anger', 'disgust', 'fear', 'happy', 'neutral','sad', 'surprised']
         x_train = []
         y_train = []
         for i in tqdm(range(len(expressions))):
@@ -94,10 +89,3 @@ class Jaffe(object):
         x_train = np.array(x_train).astype('float32') / 255.
         y_train = np.array(y_train).astype('int')
         return expressions, x_train, y_train
-    def gen_data(self):
-        _, x, y = self.gen_train()
-        from sklearn.model_selection import train_test_split
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=2022)
-        x_train, x_valid, y_train, y_valid = train_test_split(x_train, y_train, test_size=0.3, random_state=2022)
-
-        return x_train, x_valid, x_test, y_train, y_valid, y_test
