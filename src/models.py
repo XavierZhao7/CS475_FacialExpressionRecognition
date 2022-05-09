@@ -1,6 +1,7 @@
 """
-author: Xihan Zhao
+author: Xihan Zhao, Louise Lu
 datetime: 5/2022
+desc: read dataset
 """
 
 import tensorflow as tf
