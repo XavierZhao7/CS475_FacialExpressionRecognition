@@ -28,11 +28,12 @@ def program(input, output):
 
 
 
-
-    # To capture video from webcam. 
-    cap = cv2.VideoCapture(0)
-    # To use a video file as input 
-    # cap = cv2.VideoCapture('filename.mp4')
+    if input =="0":
+        # To capture video from webcam. 
+        cap = cv2.VideoCapture(0)
+    else:
+        # To use a video file as input 
+        cap = cv2.VideoCapture(input)
     count = 0
     while True:
         if count % 20 == 0:
@@ -98,7 +99,7 @@ def main():
         #     if OUTPUT is None : raise TypeError("Output video file directory must be provided.")
 
         parser = argparse.ArgumentParser(description='Facial Expression Recognition Application - JHU Machine Learning CS 601.475/675')
-        parser.add_argument("-i", help = "input video file (if any)", type=str)
+        parser.add_argument("-i", help = "input video file  directory or 0 to activate camera", type=str)
         parser.add_argument("-o", help = "output file (need to be .avi format)", type=str)
         args = parser.parse_args()
     except:
