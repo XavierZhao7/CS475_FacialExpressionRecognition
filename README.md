@@ -27,3 +27,7 @@ Note also that <#name of model> is either SimpleCNN3, GaborCNN3,or VGG16.
 
 ## Data set
 Since we cannot copy, publish or distribute any portion of the [RAF database](http://www.whdeng.cn/raf/model1.html#:~:text=Real%2Dworld%20Affective%20Faces%20Database%20(RAF%2DDB)%20is,labeled%20by%20about%2040%20annotators.). We remove the RAF data from this github repo.
+
+
+## Results
+Please refer to graphs in output/curves.ipynb for sample output in our testing process.
